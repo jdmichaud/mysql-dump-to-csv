@@ -37,7 +37,7 @@ def get_value_tuples(line):
 
 def write_file(output_directory, table_name, schema, values):
     file_name = os.path.join(output_directory, '%s.csv' % (table_name,))
-    with open(file_name, 'w') as write_file:
+    with open(file_name, 'a') as write_file:
         writer = csv.DictWriter(write_file, fieldnames=schema)
         writer.writeheader()
         for value in values:
